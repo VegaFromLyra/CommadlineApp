@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0911BA56CBDAA674BAE5F5E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60173029050654DBD28B445D /* libPods.a */; };
 		4E20F93E1AD8374B00632625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E20F93D1AD8374B00632625 /* main.m */; };
+		4E20F9451AD83C1700632625 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E20F9441AD83C1700632625 /* CoreLocation.framework */; };
+		4E20F9481AD83E3A00632625 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E20F9471AD83E3A00632625 /* City.m */; };
+		4E20F94B1AD83E5900632625 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E20F94A1AD83E5900632625 /* Weather.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		4E20F93A1AD8374B00632625 /* HelloWorld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloWorld; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E20F93D1AD8374B00632625 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4E20F9441AD83C1700632625 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4E20F9461AD83E1100632625 /* City.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		4E20F9471AD83E3A00632625 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		4E20F9491AD83E4900632625 /* Weather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		4E20F94A1AD83E5900632625 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		60173029050654DBD28B445D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3705B149816632B9CA44465 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FB79B1495E59F2B627D22769 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E20F9451AD83C1700632625 /* CoreLocation.framework in Frameworks */,
+				0911BA56CBDAA674BAE5F5E7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,8 +55,11 @@
 		4E20F9311AD8374B00632625 = {
 			isa = PBXGroup;
 			children = (
+				4E20F9441AD83C1700632625 /* CoreLocation.framework */,
 				4E20F93C1AD8374B00632625 /* HelloWorld */,
 				4E20F93B1AD8374B00632625 /* Products */,
+				9C7F9AE5BCC540CC9AC49F16 /* Pods */,
+				C726433E6F7A6CF977A5B78A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +75,29 @@
 			isa = PBXGroup;
 			children = (
 				4E20F93D1AD8374B00632625 /* main.m */,
+				4E20F9461AD83E1100632625 /* City.h */,
+				4E20F9471AD83E3A00632625 /* City.m */,
+				4E20F9491AD83E4900632625 /* Weather.h */,
+				4E20F94A1AD83E5900632625 /* Weather.m */,
 			);
 			path = HelloWorld;
+			sourceTree = "<group>";
+		};
+		9C7F9AE5BCC540CC9AC49F16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3705B149816632B9CA44465 /* Pods.debug.xcconfig */,
+				FB79B1495E59F2B627D22769 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C726433E6F7A6CF977A5B78A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60173029050654DBD28B445D /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -69,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E20F9411AD8374B00632625 /* Build configuration list for PBXNativeTarget "HelloWorld" */;
 			buildPhases = (
+				FD18EABA804440D11D8A2926 /* Check Pods Manifest.lock */,
 				4E20F9361AD8374B00632625 /* Sources */,
 				4E20F9371AD8374B00632625 /* Frameworks */,
 				4E20F9381AD8374B00632625 /* CopyFiles */,
+				E7527449727C10614C57FA8F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -113,11 +153,46 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E7527449727C10614C57FA8F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD18EABA804440D11D8A2926 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4E20F9361AD8374B00632625 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E20F94B1AD83E5900632625 /* Weather.m in Sources */,
+				4E20F9481AD83E3A00632625 /* City.m in Sources */,
 				4E20F93E1AD8374B00632625 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +276,7 @@
 		};
 		4E20F9421AD8374B00632625 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3705B149816632B9CA44465 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -208,6 +284,7 @@
 		};
 		4E20F9431AD8374B00632625 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB79B1495E59F2B627D22769 /* Pods.release.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -232,6 +309,7 @@
 				4E20F9431AD8374B00632625 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

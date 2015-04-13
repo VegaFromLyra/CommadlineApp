@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "City.h"
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        
+        City* city = [[City alloc] init];
+        [city startLocationService];
     }
     return 0;
 }
