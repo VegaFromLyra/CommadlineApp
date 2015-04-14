@@ -12,23 +12,27 @@
 
 @implementation City
 
-- (void)startLocationService {
+- (id)init {
     
-    if (self.locationManager == nil) {
+    self = [super init];
+    
+    if (self) {
+        
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer; // Accurate to the nearest km
         self.locationManager.distanceFilter = 500; // metres
-        
-        [self.locationManager startUpdatingLocation];
-    }
-    
-    if (self.geocoder == nil) {
         self.geocoder = [[CLGeocoder alloc] init];
     }
     
-    CFRunLoopRun();
+    return self;
+}
+
+- (void)startLocationService {
     
+    [self.locationManager startUpdatingLocation];
+    
+    CFRunLoopRun();
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -40,15 +44,19 @@
          
          if ([placemarks count] > 0) {
              CLPlacemark* placemark = [placemarks objectAtIndex:0];
-             NSLog(@"Hello %@!", placemark.locality);
              
              Weather* weather = [[Weather alloc] init];
-             [weather fetchWeatherData:location.coordinate.latitude longitude:location.coordinate.longitude];
+             [weather fetchWeatherData:location.coordinate.latitude
+                    longitude:location.coordinate.longitude
+                     completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
+                         double currentTemperarture = [weather getCurrentTemp:responseObject];
+                         
+                         NSLog(@"Hello %@! Right now the temperature here is %1.2f celsius!", placemark.locality, currentTemperarture);
+                         
+                         CFRunLoopStop(CFRunLoopGetCurrent());
+                     }];
          }
      }];
-    
-    
-    
 }
 
 @end
